@@ -29,7 +29,6 @@ def line_plot(df_name,title) :
     plt.savefig("line.png", bbox_inches="tight", dpi = 300)
     plt.show()
     
-
 df_liq = read("CO2_emissions_from_liquid_fuel_consumption.csv")
 df_solid = read("CO2 emissions from solid fuel consumption.csv")
 df_power_cons = read("Electric power consumption.csv")
@@ -47,22 +46,7 @@ df_to_be_plotted3 = data_filter(df_liq )
 
 line_plot(df_to_be_plotted2,"Urban Population")
 line_plot(df_to_be_plotted1,"CO2 emissions from solid fuel consumption")
-line_plot(df_to_be_plotted2,"CO2 emissions from liquid fuel consumption") 
-
-##################################################################3
-
-def bargraph(df_name,title) :
-    plt.figure()
-    for i in range (len(year)):    
-        plt.plot(df_name["Country Name"], df_name[year[i]], label = year[i])
-    plt .bar(["Country Name"],[])
-    plt.xlabel("Country Name")
-        plt.ylabel("population")
-        plt.title("power consumption")
-        plt.xticks(rotation = 90)
-        plt.legend()
-        plt.savefig("bargraph.png",bbox_inches = "tight")
-        plt.show()
+line_plot(df_to_be_plotted3,"CO2 emissions from liquid fuel consumption") 
 
 
 
